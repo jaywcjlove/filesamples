@@ -1,0 +1,21 @@
+{
+  "name": "filesamples",
+  "private": false,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ejsc \"templates/**/*\" -o \"website\"",
+    "dev": "ejsc \"templates/**/*\" -o \"website\" -w"
+  },
+  "author": "jaywcjlove",
+  "license": "MIT",
+  "dependencies": {
+    "@ffprobe-installer/ffprobe": "^2.1.2",
+    "@wcj/ejs-cli": "^3.1.6",
+    "fs-extra": "^11.3.1",
+    "html-minifier-next": "^1.4.0",
+    "prettier": "^3.6.2",
+    "pretty-bytes": "^7.0.1"
+  }
+}

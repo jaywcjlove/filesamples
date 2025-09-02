@@ -1,0 +1,23 @@
+<%- include('./_partial/header', {
+    type: "home",
+    title: "Free File Samples to Download"
+}); %>
+<main>
+    <div class="info">This project collects different types of files solely for testing my personal applications, such as the audio format converter <a target="_blank" href="https://apps.apple.com/app/6743841447">Audioer</a> and the video format converter  <a target="_blank" href="https://apps.apple.com/app/6742680573">Videoer</a>. All copyrights belong to their original authors. This site assumes no legal responsibility or risk, and the content is not used for any commercial purpose. If you believe your copyright has been infringed, please contact me and I will promptly remove the related content. All files are sourced from free resources on the internet, but I cannot guarantee that every file is free from commercial restrictions. If you find any issue, please let me know. Users assume all risks arising from the use of the content on this site.</div>
+    <div class="app">
+    <% GLOBAL.myapp.filter(m => /(videoer|musicer|audioer)/.test(m.title.toLocaleLowerCase())).forEach(function(app) { %>
+        <a href="<%= app.href %>" target="_blank">
+        <img width="45px" height="45px" src="<%= PUBLIC_PATH %>appicon/<%= app.image %>" alt="<%= app.title %>" title="<%= app.title %>">
+        </a>
+    <% }); %>
+    </div>
+    <br />
+    <div class="app">
+    <% GLOBAL.myapp.filter(m => !/(videoer|musicer|audioer)/.test(m.title.toLocaleLowerCase())).forEach(function(app) { %>
+        <a href="<%= app.href %>" target="_blank">
+        <img width="45px" height="45px" src="<%= PUBLIC_PATH %>appicon/<%= app.image %>" alt="<%= app.title %>" title="<%= app.title %>">
+        </a>
+    <% }); %>
+    </div>
+</main>
+<%- include('./_partial/footer', {}); %>

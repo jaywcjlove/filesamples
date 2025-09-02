@@ -1,0 +1,162 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #282828;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  color: white;
+  padding: 0;
+  margin: 0;
+}
+
+body > header {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+a {
+  color: #62bce5;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+a:hover {
+  color: #388db4;
+}
+
+a.github-corner:hover .octo-arm { animation: octocat-wave 560ms infinite linear; }
+a.github-corner svg { fill: #f1f1f1; color: #000; position: absolute; top: 0; border: 0; right: 0; z-index: 99; width: 40px; height: 40px; }
+a.github-corner { position: fixed; z-index: 9999; top: 0; right: 0; }
+
+
+@keyframes octocat-wave {
+  0%,100%{-webkit-transform:rotate(0); transform:rotate(0);}
+  20%,60%{-webkit-transform:rotate(-25deg); transform:rotate(-25deg);}
+  40%,80%{-webkit-transform:rotate(10deg); transform:rotate(10deg);}
+}
+
+h1 {
+  font-size: 1.6em;
+  font-weight: bold;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  text-align: center;
+}
+
+nav {
+    text-align: center;
+    padding: 0.23em 0;
+    margin-bottom: 0.23em;
+    --color-header-bg: #3a3a3a8f;
+    background: var(--color-header-bg);
+    backdrop-filter: saturate(180%) blur(0.4rem);
+    background-color: var(--color-header-bg);
+    position: sticky;
+    z-index: 2;
+    top: 0;
+}
+nav > div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+}
+
+nav a.active {
+  color: white;
+}
+
+li, ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 420px;
+  padding-top: 5em;
+}
+
+main > div.info {
+  font-size: 1em;
+  font-weight: 200;
+  color: #b2b2b2;
+  margin-bottom: 3em;
+  text-indent: 2rem;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65em;
+}
+
+ul li a i {
+  color: #5b5b5b;
+  font-style: normal;
+}
+ul li a {
+  display: flex;
+  justify-content: space-between;
+  background-color: #0000004d;
+  border-radius: 6px;
+  padding: 6px 10px 6px 4px;
+  transition: all 0.6s;
+}
+ul li a:hover {
+  background-color: #0000008f;
+}
+
+ul li a :first-child svg {
+  font-size: 2em;
+}
+ul li a div.info {
+  flex-direction: column;
+  align-items: flex-start;
+}
+ul li a div.info > div {
+  font-size: 0.35em;
+}
+ul li a div.info :first-child {
+  font-weight: 500;
+  line-height: 0.87em;
+}
+ul li a div.info :last-child {
+  font-size: 0.65em;
+  color: #aaaaaa;
+  font-weight: 100;
+}
+ul li a div {
+  display: flex;
+  flex-direction: row;
+  gap: 0.15em;
+  align-items: center;
+}
+
+footer sup {
+  position: absolute;
+  font-size: 10px;
+  color: #8d8d8d;
+}
+footer div, footer div a {
+  font-weight: 100;
+}
+footer div {
+  font-size: small;
+  padding-bottom: 0.35em;
+}
+
+footer time {
+  font-size: x-small;
+  color: #ffffff4f;
+  padding-top: 1rem;
+  display: inline-block;
+}
+
+footer {
+  font-weight: 100;
+  text-align: center;
+  padding-top: 4em;
+  padding-bottom: 7em;
+}

@@ -1,0 +1,12 @@
+<%- include('./_partial/header', {
+    type: "video",
+    title: "Video File Samples - Download Example Video Formats"
+}); %>
+<main>
+    <ul>
+    <% VIDEO.sort((a, b) => b.ctime - a.ctime).forEach(function(file, idx){ %>
+        <%- include('./_partial/file-list', { file }); %>
+    <% }); %>
+    </ul>
+</main>
+<%- include('./_partial/footer', {}); %>
