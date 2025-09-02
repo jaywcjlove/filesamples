@@ -6,8 +6,8 @@
   "main": "index.js",
   "scripts": {
     "create": "node scripts/main.mjs",
-    "start": "npm run create && ejsc \"templates/**/*\" -o \"website\"",
-    "dev": "npm run create && ejsc \"templates/**/*\" -o \"website\" -w"
+    "start": "npm run create && ejsc \"templates/**/*\" -o \"docs\"",
+    "dev": "npm run create && ejsc \"templates/**/*\" -o \"docs\" -w"
   },
   "author": "jaywcjlove",
   "license": "MIT",

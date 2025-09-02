@@ -51,7 +51,7 @@ function getVideoMeta(filePath) {
 
 async function run() {
     console.log("ffprobe", ffprobe.version, ffprobe.path);
-    const videoPath = path.join(__dirname, '../website/files/video');
+    const videoPath = path.join(__dirname, '../docs/files/video');
     const videoFiles = await fs.readdir(videoPath);
     const videoData = [];
     
@@ -64,7 +64,7 @@ async function run() {
                 title: path.basename(videoFile, path.extname(videoFile)),
                 filename: videoFile.replace(/\.[a-z0-9]+$/, ''),
                 ext: path.extname(videoFile).replace(/^\./, '').toLocaleUpperCase(),
-                path: filePath.replace(path.join(__dirname, '..', "website"), "").replace(/^[\/\\]/, '').split(path.sep).join('/'),
+                path: filePath.replace(path.join(__dirname, '..', "docs"), "").replace(/^[\/\\]/, '').split(path.sep).join('/'),
                 format: meta.format?.format_name,
                 duration: meta.format?.duration ? parseFloat(meta.format.duration) : null,
                 size: size,
@@ -88,7 +88,7 @@ async function run() {
     }
 
 
-    const audioPath = path.join(__dirname, '../website/files/audio');
+    const audioPath = path.join(__dirname, '../docs/files/audio');
     const audioFiles = await fs.readdir(audioPath);
     const audioData = [];
 
@@ -101,7 +101,7 @@ async function run() {
                 title: path.basename(audioFile, path.extname(audioFile)),
                 filename: audioFile.replace(/\.[a-z0-9]+$/, ''),
                 ext: path.extname(audioFile).replace(/^\./, '').toLocaleUpperCase(),
-                path: filePath.replace(path.join(__dirname, '..', "website"), "").replace(/^[\/\\]/, '').split(path.sep).join('/'),
+                path: filePath.replace(path.join(__dirname, '..', "docs"), "").replace(/^[\/\\]/, '').split(path.sep).join('/'),
                 format: meta.format?.format_name,
                 duration: meta.format?.duration ? parseFloat(meta.format.duration) : null,
                 size: size,
@@ -121,7 +121,7 @@ async function run() {
                     title: path.basename(audioFile, path.extname(audioFile)),
                     filename: audioFile.replace(/\.[a-z0-9]+$/, ''),
                     ext: path.extname(audioFile).replace(/^\./, '').toLocaleUpperCase(),
-                    path: filePath.replace(path.join(__dirname, '..', "website"), "").replace(/^[\/\\]/, '').split(path.sep).join('/'),
+                    path: filePath.replace(path.join(__dirname, '..', "docs"), "").replace(/^[\/\\]/, '').split(path.sep).join('/'),
                     format: null,
                     duration: null,
                     size: size,
@@ -136,7 +136,7 @@ async function run() {
                     title: path.basename(audioFile, path.extname(audioFile)),
                     filename: audioFile.replace(/\.[a-z0-9]+$/, ''),
                     ext: path.extname(audioFile).replace(/^\./, '').toLocaleUpperCase(),
-                    path: filePath.replace(path.join(__dirname, '..', "website"), "").replace(/^[\/\\]/, '').split(path.sep).join('/'),
+                    path: filePath.replace(path.join(__dirname, '..', "docs"), "").replace(/^[\/\\]/, '').split(path.sep).join('/'),
                     format: null,
                     duration: null,
                     size: null,
