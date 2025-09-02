@@ -1,1 +1,3 @@
 https://wangchujiang.com/filesamples/video.html
+https://wangchujiang.com/filesamples/index.html
+https://wangchujiang.com/filesamples/audio.html

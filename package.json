@@ -5,8 +5,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ejsc \"templates/**/*\" -o \"website\"",
-    "dev": "ejsc \"templates/**/*\" -o \"website\" -w"
+    "create": "node scripts/main.mjs",
+    "start": "npm run create && ejsc \"templates/**/*\" -o \"website\"",
+    "dev": "npm run create && ejsc \"templates/**/*\" -o \"website\" -w"
   },
   "author": "jaywcjlove",
   "license": "MIT",

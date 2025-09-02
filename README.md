@@ -38,6 +38,23 @@ This project collects different types of files solely for testing my personal ap
 
 Preview: https://wangchujiang.com/filesamples/
 
+## Development
+
+Place different types of files into the [`website/files`](./website/files/) directory.
+Use the [`scripts/main.mjs`](./scripts/main.mjs) script to generate data files (e.g., [`scripts/audio.json`](./scripts/audio.json))
+for use in templates.
+
+Common Commands
+
+```bash
+# Generate template data
+npm run create
+# Generate template data and compile templates
+npm run start
+# Generate template data, watch for changes, and compile templates in real time
+npm run dev
+```
+
 ## License
 
 MIT © [Kenny Wong](https://github.com/jaywcjlove)
