@@ -40,7 +40,7 @@ Preview: https://wangchujiang.com/filesamples/
 
 ## Development
 
-Place different types of files into the [`website/files`](./website/files/) directory.
+Place different types of files into the [`docs/files`](./docs/files/) directory.
 Use the [`scripts/main.mjs`](./scripts/main.mjs) script to generate data files (e.g., [`scripts/audio.json`](./scripts/audio.json))
 for use in templates.
 
