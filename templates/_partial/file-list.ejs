@@ -7,7 +7,7 @@
             <% let size = file.width && file.height ? `${file.width}x${file.height} / ` : "" %>
             <div class="info">
                 <span><%= file.filename %>.<i><%= file.ext.toLocaleLowerCase() %></i></span>
-                <div><%= size %><%= file.sizeFormat %></div>
+                <div><%= file.durationFormat ? file.durationFormat + " / " : "" %><%= size %><%= file.sizeFormat %></div>
             </div>
         </div>
         <div>

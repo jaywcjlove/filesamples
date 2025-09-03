@@ -49,6 +49,12 @@ function getVideoMeta(filePath) {
     });
 }
 
+function formatDuration(duration) {
+  const minutes = Math.floor(duration / 60);
+  const seconds = Math.floor(duration % 60);
+  return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+}
+
 async function run() {
     console.log("ffprobe", ffprobe.version, ffprobe.path);
     const videoPath = path.join(__dirname, '../docs/files/video');
@@ -60,13 +66,15 @@ async function run() {
         try {
             const meta = await getVideoMeta(filePath);
             const size = meta.format?.size ? parseInt(meta.format.size) : 0
+            const duration = meta.format?.duration ? parseFloat(meta.format.duration) : null
             const videoItem = {
                 title: path.basename(videoFile, path.extname(videoFile)),
                 filename: videoFile.replace(/\.[a-z0-9]+$/, ''),
                 ext: path.extname(videoFile).replace(/^\./, '').toLocaleUpperCase(),
                 path: filePath.replace(path.join(__dirname, '..', "docs"), "").replace(/^[\/\\]/, '').split(path.sep).join('/'),
                 format: meta.format?.format_name,
-                duration: meta.format?.duration ? parseFloat(meta.format.duration) : null,
+                duration: duration,
+                durationFormat: duration ? formatDuration(duration) : "",
                 size: size,
                 sizeFormat: prettyBytes(size),
                 video_codec: meta.streams?.find(s => s.codec_type === 'video')?.codec_name,
@@ -97,13 +105,15 @@ async function run() {
         try {
             const meta = await getVideoMeta(filePath);
             const size = meta.format?.size ? parseInt(meta.format.size) : 0
+            const duration = meta.format?.duration ? parseFloat(meta.format.duration) : 0
             const audioItem = {
                 title: path.basename(audioFile, path.extname(audioFile)),
                 filename: audioFile.replace(/\.[a-z0-9]+$/, ''),
                 ext: path.extname(audioFile).replace(/^\./, '').toLocaleUpperCase(),
                 path: filePath.replace(path.join(__dirname, '..', "docs"), "").replace(/^[\/\\]/, '').split(path.sep).join('/'),
                 format: meta.format?.format_name,
-                duration: meta.format?.duration ? parseFloat(meta.format.duration) : null,
+                duration: duration,
+                durationFormat: formatDuration(duration) ?? "",
                 size: size,
                 sizeFormat: prettyBytes(size),
                 audio_codec: meta.streams?.find(s => s.codec_type === 'audio')?.codec_name,
@@ -124,6 +134,7 @@ async function run() {
                     path: filePath.replace(path.join(__dirname, '..', "docs"), "").replace(/^[\/\\]/, '').split(path.sep).join('/'),
                     format: null,
                     duration: null,
+                    durationFormat: "",
                     size: size,
                     sizeFormat: prettyBytes(size),
                     audio_codec: null,
@@ -139,6 +150,7 @@ async function run() {
                     path: filePath.replace(path.join(__dirname, '..', "docs"), "").replace(/^[\/\\]/, '').split(path.sep).join('/'),
                     format: null,
                     duration: null,
+                    durationFormat: "",
                     size: null,
                     sizeFormat: null,
                     audio_codec: null,
